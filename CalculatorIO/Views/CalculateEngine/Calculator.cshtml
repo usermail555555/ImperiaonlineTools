@@ -1,0 +1,108 @@
+﻿@model ImperiaonlineToolsModels.CalcInputModel
+
+@{
+    ViewBag.Title = "Calculator";
+}
+
+
+<h2>Calculator for imperiaonline v.5 </h2>
+<div class="container">
+    @using (Ajax.BeginForm("Calculator", "CalculateEngine", new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "POST", UpdateTargetId = "result" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="col-md-3">
+            <div>
+                @Html.Label("Server time")<br />
+                @Html.TextBoxFor(x => Model.ServerTime)
+            </div>
+            <div>
+                @Html.Label("Time to the fight")<br />
+                @Html.TextBoxFor(x => Model.TimeToCrash)
+            </div>
+            <div>
+                @Html.Label("Time to the enemy")<br />
+                @Html.TextBoxFor(x => Model.TimeToEnemy)
+            </div>
+            <div>
+                @Html.Label("Distance to the enemy")<br />
+                @Html.TextBoxFor(x => Model.DistanceToEnemy)
+            </div>
+            <div>
+                @Html.Label("Enemy speed")<br />
+                @Html.TextBoxFor(x => Model.EnemySpeed)
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div>
+                @Html.Label("Enemy cartography")<br />
+                <select name="EnemyCartography">
+                    @for (int i = 0; i < 101; i++)
+                    {
+                        <option>@i</option>
+                    }
+                </select>
+            </div>
+            <div>
+                @Html.Label("War horses")<br />
+                <select name="EnemyWarHorses">
+                    @for (int i = 0; i < 101; i++)
+                    {
+                        <option>@i</option>
+                    }
+                </select>
+            </div>
+            <div>
+                @Html.Label("Colony horses")<br />
+                <select name="ColonyHorses">
+                    <option>0</option>
+                    <option>5</option>
+                    <option>10</option>
+                </select>%
+            </div>
+            <div>
+                @Html.Label("Miracle")<br />
+                <select name="Miracle">
+                    <option>0</option>
+                    <option>10</option>
+                </select>%
+            </div>
+            <div>
+                @Html.Label("In war")<br />
+                <select name="InWar">
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </div><br />
+
+            <input type="submit" value="Calculate" />
+        </div>
+        <div class="container col-md-3">
+            @Html.Label("Speed of the world", new { style="color: blue"})
+            <select style="color: blue" name="Speed">
+                <option>
+                    Normal speed
+                </option>
+                <option>
+                    Speed x 2
+                </option>
+                <option>
+                    Speed x 4
+                </option>
+                <option>
+                    Speed x 10
+                </option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <img src="~/Images/Eeyore.jpg" />
+        </div>
+        <div id="result">
+
+        </div>
+
+    }
+
+
+</div>
+

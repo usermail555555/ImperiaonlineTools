@@ -1,0 +1,45 @@
+﻿@model ImperiaonlineToolsModels.Product
+@{
+    ViewBag.Title = "CreateProduct";
+}
+
+<h2>CreateProduct</h2>
+
+@using (Ajax.BeginForm("CreateProduct", "Admin", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId="result"
+}))
+{
+<div>
+    @Html.Label("Product title")
+    @Html.TextBoxFor(title=>Model.Title)
+</div>
+<div>
+    @Html.Label("Product description")
+    @Html.TextBoxFor(description => Model.Description)
+</div>
+<div>
+    @Html.Label("Product video URL")
+    @Html.TextBoxFor(video=>Model.VideoUrl)
+</div>
+@*<div>
+    @Html.Label("PayPal button Action")
+    @Html.TextBoxFor(action => Model.PayPalButton.Action)
+</div>*@
+<div>
+    @Html.Label("PayPal button value")
+    @Html.TextBoxFor(btnValue => Model.PayPalButton.Value)
+</div>
+@*<div>
+    @Html.Label("PayPal button image string")
+    @Html.TextBoxFor(imgstr => Model.PayPalButton.Image)
+</div>*@
+    <div>
+        <input type="submit" value="Add" />
+    </div>
+}
+
+<div id="result">
+
+</div>
