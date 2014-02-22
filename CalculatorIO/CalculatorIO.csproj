@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalculateEngineController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PayPalMvcController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -243,11 +244,13 @@
     <Content Include="Views\Shared\_CalcOutput.cshtml" />
     <Content Include="Views\Test\GetProduct.cshtml" />
     <Content Include="Views\Home\IPN.cshtml" />
+    <Content Include="Views\Shared\ValidateCommand.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\CreateProduct\" />
+    <Folder Include="Views\PayPal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
