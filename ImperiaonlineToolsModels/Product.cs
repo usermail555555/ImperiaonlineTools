@@ -10,6 +10,7 @@ namespace ImperiaonlineToolsModels
     {
         
         public int ProductId { get; set; }
+        public decimal Price { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string VideoUrl { get; set; }
@@ -21,6 +22,7 @@ namespace ImperiaonlineToolsModels
         public Product(Product product)
         {
             this.Title = product.Title;
+            this.Price = product.Price;
             this.Description = product.Description;
             this.VideoUrl = product.VideoUrl;
             this.PayPalButton = new PayPalButton(product);

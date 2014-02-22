@@ -16,6 +16,10 @@
     @Html.TextBoxFor(title=>Model.Title)
 </div>
 <div>
+    @Html.Label("Product price")
+    @Html.TextAreaFor(price =>Model.Price)
+</div>
+<div>
     @Html.Label("Product description")
     @Html.TextBoxFor(description => Model.Description)
 </div>

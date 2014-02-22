@@ -23,6 +23,7 @@ namespace CalculatorIO.Areas.Admin.Controllers
             Product newProduct = new Product();
             {
                 newProduct.Title = product.Title;
+                newProduct.Price = product.Price;
                 newProduct.Description = product.Description;
                 newProduct.VideoUrl = product.VideoUrl;
                 newProduct.PayPalButton = new PayPalButton(product);
