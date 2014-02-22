@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PayPal.PayPalAPIInterfaceService.Model;
 
 namespace CalculatorIO.Controllers
 {
@@ -27,22 +28,28 @@ namespace CalculatorIO.Controllers
             return View();
         }
 
-        public ActionResult IPN()
+        //public ActionResult IPN()
+        //{
+        //    byte[] bytes = Request.BinaryRead(Request.ContentLength);
+
+        //    PayPal.IPNMessage message = new PayPal.IPNMessage(bytes);
+        //    if (message.Validate())
+        //    {
+        //        return View(message.ToString());
+        //        // message returned VERIFIED
+        //    }
+        //    else
+        //    {
+                
+        //        // There was a problem
+        //    }
+
+        //    return null;
+        //}
+
+        public ActionResult IPN(string msg)
         {
-            byte[] bytes = Request.BinaryRead(Request.ContentLength);
-
-            PayPal.IPNMessage message = new PayPal.IPNMessage(bytes);
-            if (message.Validate())
-            {
-                return View(message.ToString());
-                // message returned VERIFIED
-            }
-            else
-            {
-                // There was a problem
-            }
-
-            return null;
+            return View(msg.ToString());
         }
     }
 }
