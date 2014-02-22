@@ -1,8 +1,4 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-
-@*<br />
+﻿@*<br />
 <br />
 <div class="container">
     <div class="col-md-6">
@@ -26,12 +22,15 @@
             <input type="hidden" name="hosted_button_id" value="B5CY8CNEAGAEE">
             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
             <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>*@
+        </form>
     </div>
-</div>*@
+</div>
+*@
 
 
-
+@{
+ViewBag.Title = "Home Page";
+}
 @using (Html.BeginForm("ValidateCommand", "PayPal"))
 {
     <div>
