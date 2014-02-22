@@ -47,7 +47,7 @@ namespace CalculatorIO.Controllers
         //    return null;
         //}
 
-        public ActionResult IPN(string msg)
+        public ActionResult IPN(PayPal.IPNMessage msg)
         {
             return View(msg.ToString());
         }
