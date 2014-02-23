@@ -28,26 +28,5 @@ namespace CalculatorIO.Controllers
             return View();
         }
 
-        public ActionResult IPN()
-        {
-            byte[] bytes = Request.BinaryRead(Request.ContentLength);
-
-            PayPal.IPNMessage message = new PayPal.IPNMessage(bytes);
-            if (message.Validate())
-            {
-                
-                return View(message.ToString());
-                // message returned VERIFIED
-            }
-            else
-            {
-                
-                // There was a problem
-            }
-
-            return null;
-        }
-
-        
-    }
+     }
 }

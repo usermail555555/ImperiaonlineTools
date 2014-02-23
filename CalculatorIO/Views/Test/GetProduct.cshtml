@@ -1,10 +1,6 @@
 ﻿@using ImperiaonlineToolsModels;
 @model List<Product>
 
-
-
-
-
 <div class="container">
     <br />
     <div style="text-align:center">
@@ -23,12 +19,8 @@
             <iframe width=" 420" height="315" src="@item.VideoUrl" frameborder="0" allowfullscreen></iframe>
         </div>
         <div>
-
-            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="@item.PayPalButton.Value">
-                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            <form action="/Cart/AddToCart/@item.ProductId" method="post">
+                <input class="btn btn-success" type="submit" value="Add to cart" />
             </form>
         </div>
     </div>

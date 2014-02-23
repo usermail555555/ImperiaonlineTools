@@ -1,0 +1,13 @@
+﻿@model List<ImperiaonlineToolsModels.Product>
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Products in the Cart:</h2>
+
+@foreach (var item in Model)
+{
+    <div>
+        @item.Title - @item.Price
+    </div>
+}
